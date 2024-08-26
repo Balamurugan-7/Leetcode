@@ -26,6 +26,8 @@ public:
         }
     }
     int countNodes(TreeNode* root) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
         if(!root)   return 0;
         fun(root);
         return c;
