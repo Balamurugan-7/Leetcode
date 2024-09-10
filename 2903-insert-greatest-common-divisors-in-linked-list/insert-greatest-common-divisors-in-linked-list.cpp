@@ -21,13 +21,11 @@ public:
         ListNode* root = head;
         while(root->next)
         {
-            int v;
-            if(root->val < root->next->val)
-                v = findgcd(root->val,root->next->val);
-            else
-                v = findgcd(root->next->val,root->val);
             ListNode* t = root->next;
-            root->next = new ListNode(v);
+            if(root->val < root->next->val)
+                root->next = new ListNode(findgcd(root->val,root->next->val)); 
+            else
+                root->next = new ListNode(findgcd(root->next->val,root->val)); 
             root->next->next = t;
             root = t;
         }
