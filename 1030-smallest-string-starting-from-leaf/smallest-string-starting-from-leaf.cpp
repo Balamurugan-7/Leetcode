@@ -24,15 +24,16 @@ public:
             traverse(root->right,t + s);
         if(!root->left && !root->right)
         {
-            dp.push_back(t+s);
+            if(minstring == "" || minstring > t + s)
+                minstring = t+s;
         }
     }
     string smallestFromLeaf(TreeNode* root) {
         traverse(root,"");
-        for(auto& p: dp){
-            if(minstring == "" || minstring > p)
-                minstring = p;
-        }
+        // for(auto& p: dp){
+        //     if(minstring == "" || minstring > p)
+        //         minstring = p;
+        // }
         return minstring;
     }
 };
