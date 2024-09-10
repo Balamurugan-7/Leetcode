@@ -11,8 +11,6 @@
  */
 class Solution {
 public:
-    vector<string> dp;
-    // vector<string> dp;
     char c = 'a';
     string minstring = "";
     void traverse(TreeNode* root,string s)
@@ -30,10 +28,6 @@ public:
     }
     string smallestFromLeaf(TreeNode* root) {
         traverse(root,"");
-        // for(auto& p: dp){
-        //     if(minstring == "" || minstring > p)
-        //         minstring = p;
-        // }
         return minstring;
     }
 };
